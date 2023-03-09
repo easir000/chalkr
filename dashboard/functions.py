@@ -196,7 +196,7 @@ def getNextSubscriptionDate(profile):
                 day_created = profile.date.created.day
             
                 if day_created >today:
-                  next_date = datetime.datetimw.now()
+                  next_date = datetime.datetime.now()
                   next_month = returnMonth(next_date.month)
                   year = next_date.year
                 else:
@@ -214,7 +214,7 @@ def getNextSubscriptionDate(profile):
         day_created = profile.date.created.day
             
         if day_created >today:
-              next_date = datetime.datetimw.now()
+              next_date = datetime.datetime.now()
               next_month = returnMonth(next_date.month)
               year = next_date.year
         else:

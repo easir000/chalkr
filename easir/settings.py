@@ -41,7 +41,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # ALLOWED_HOSTS = ['*']
 
 
-PAYPAL_SECRET='A21AAKosVkXnrECQW1S0xLMWKAGMnsPlnn7icj4-hW5NOMUDLlUqscCLdw5NuBU1-xxqFcQdzy9ee8niL0-mhPnMx9eTiF4ww'
+PAYPAL_SECRET='EMnAWe06ioGtouJs7gLYT9chK9-2jJ--7MKRXpI8FesmY_2Kp-d_7aCqff7M9moEJBvuXoBO4clKtY0v'
 # Application definition
 
 
