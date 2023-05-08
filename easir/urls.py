@@ -23,7 +23,8 @@ urlpatterns = [
     path('',include('landing.urls')),
     path('auth/',include('authorisation.urls')),
     path('dashboard/',include('dashboard.urls')),
-    
+    # path('website/',include('website.urls')),
+        
 ]
 
 if settings.DEBUG:

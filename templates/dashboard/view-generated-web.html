@@ -1,0 +1,43 @@
+
+{% extends 'layout/dashboard.html' %}
+
+{%  load static %}
+
+{% block body %}
+
+
+   <!-- Content -->
+
+<div class="container-fluid flex-grow-1 container-p-y">
+    <!-- Layout Demo -->
+    <div class="layout-demo-wrapper">
+
+      <div class="row">
+        <div class = "col-lg-1"> </div>
+        <div class = "col-lg-10"> </div>
+        <h2 class = "mb-3"> Your Web is ready  </h2>
+     
+
+        {% comment %} <h2 class = "mb-3"> {{ web.title }} </h2> {% endcomment %}
+        {% comment %} <h2 class = "mb-3"> {{ web.slug }} </h2> {% endcomment %}
+
+        
+        {% comment %} <h5> Keywords : <span class = "badge bg-primary">{{ web.keywords }}</span> </h5> {% endcomment %}
+
+       {% for section in webSections%}
+       <div class = "mt-3">
+        {% comment %} <h3>{{section.title}} </h3> {% endcomment %}
+        {{ section.body|safe }}
+       </div>
+       {%endfor%}
+    </div>
+
+
+
+  
+{% endblock  %}
+
+
+
+    
+    

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
+
 from django.contrib import messages
 
 
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     'dashboard',
     
     'crispy_forms',
+    'crispy_bootstrap5',
     
    
 ]
@@ -192,8 +194,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = ('bootstrap', 'uni_form', 'bootstrap3','bootstrap5', 'bootstrap4', 'semantic-ui')
 
-
-
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'uni_form'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'email.host'

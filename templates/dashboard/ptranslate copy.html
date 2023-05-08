@@ -1,0 +1,56 @@
+
+{% extends 'layout/dashboard.html' %}
+
+{%  load static %}
+
+{% block body %}
+
+
+
+
+   <!-- Content -->
+
+   <div class="container-fluid flex-grow-1 container-p-y">
+    <!-- Layout Demo -->
+      <div class="layout-demo-wrapper">
+
+        <div class="row">
+          <div class = "col-lg-1"> </div>
+          <div class = "col-lg-10"> </div>
+          <div class= "row">
+            {% comment %} <div class = "col-lg-6"> </div>
+            <img class="rounded" src="{%static 'landing/img/person/person_4.jpg' %}" alt="Create web">
+          
+        </div> {% endcomment %}
+      <div class = "col-lg-6"> </div>
+     
+     <h2 class = "mb-3"> 🛹Enter your  natural Language  below to Translate natural language to SQL queries. 🛹 </h2>
+
+
+  <form class = "" action="#" method = "post">
+    {% csrf_token %}
+        
+        
+        <div class="mb-3">
+          <textarea
+              type="text"
+              id="prompt"
+              name="prompt"
+              class="form-control"
+              
+              placeholder="Hi, Do you have a moment to talk Joe?"
+              required
+               
+              ></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-success fw-bold" type="submit">🙂Generated SQL queries </button>
+          </div>
+     <form>
+
+  
+  {% if result %}
+      <h3>SQL translate code:</h3>
+      <pre>{{ result }}</pre>
+  {% endif %}
+{% endblock  %}

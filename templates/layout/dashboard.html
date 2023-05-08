@@ -36,9 +36,10 @@
     <title>Chalkr AI</title>
 
     <meta name="description" content="" />
-
+    <link rel="icon" type="image/x-icon" href="{% static 'landing/img/chalkr.ai.jpg' %}" alt="Bootstrap" width="50" height="50"/> 
+    <title> CHalkr AI</title>
     <!-- Favicon -->
-     <link rel="icon" type="image/x-icon" href="{% static 'main/img/favicon/favicon.ico' %}" /> 
+     {% comment %} <link rel="icon" type="image/x-icon" href="{% static 'main/img/favicon/favicon.ico' %}" />  {% endcomment %}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -111,21 +112,45 @@
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Blog Assistant</span>
             </li>
+            <li class="menu-item">
+              <a href="{% url 'query' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-stats"></i>
+                <div data-i18n="Analytics">SQL translate</div>
+              </a>
+            </li> 
+            <li class="menu-item">
+              <a href="{% url 'translate' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                <div data-i18n="Analytics">English to other languages</div>
+              </a>
+            </li> 
+            <li class="menu-item">
+              <a href="{% url 'images' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-image"></i>
+                <div data-i18n="Analytics">generate img from txt</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="{% url 'web-topic' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-transfer-alt"></i>
+                <div data-i18n="Analytics">language-translate</div>
+              </a>
+            </li> 
              <li class="menu-item">
               <a href="{% url 'profile' %}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-body"></i>
                 <div data-i18n="Analytics">Chalkr Profile</div>
               </a>
             </li> 
             <li class="menu-item">
               <a href="{% url 'blog-topic' %} " class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bxl-blogger"></i>
                 <div data-i18n="Analytics">Generate Blog Topic  </div>
               </a>
             </li>
             <li class="menu-item">
               <a href="{% url 'blog-sections' %} " class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bxs-institution"></i>
                 <div data-i18n="Analytics">Generate Blog section  </div>
               </a>
             </li>
@@ -135,7 +160,7 @@
             </li>
             <li class="menu-item">
               <a href="{% url 'home' %}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bx-log-out"></i>
                 <div data-i18n="Analytics">Logout </div>
               </a>
             </li>

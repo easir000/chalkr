@@ -80,12 +80,19 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="index.html" class="app-brand-link gap-2">
+                {% comment %} <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                    
                   </span>
                   <span class="app-brand-text demo text-body fw-bolder">Chalkr AI</span>
-                </a>
+                </a> {% endcomment %}
+                <span class="app-brand-logo demo">
+                
+                  <a  href = "{% url 'home' %}" class="navbar-brand" href="#">
+                    <img src="{% static 'landing/img/chalkr.ai.jpg' %}" alt="Bootstrap" width="100" height="100">
+                  </a>
+              
+              </span>
               </div>
              
             

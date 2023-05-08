@@ -1,0 +1,140 @@
+{% extends 'layout/dashboard.html' %}
+
+{%  load static %}
+
+{% block body %}
+
+     <!-- START THE section1Title &  section1Description -->
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-lg-6">
+
+            <h1 class="display-5 fw-bold">{{ section1Title }}</h1>
+            <p class="col-md-8 fs-4">{{ section1Description }}</p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+        <div class="col-lg-6">
+
+            <img 
+            src="{% static 'main/img/illustrations/18.jpg' %} " 
+              class = "img-fluid"
+              
+              alt="Chalkr AI"
+
+              />
+</div>
+</div>
+</div>
+</div>
+     <!-- START THE service1Title &  service1Description -->
+
+<div class="container px-4 py-5" id="featured-3">
+    
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+        </div>
+        <h3 class="fs-2">{{ service1Title }}</h3>
+        <p>{{ service1Description }}</p>
+        
+      </div>
+
+     <!-- START THE service2Title &  service2Description -->
+
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+        </div>
+        <h3 class="fs-2">{{ service2Title }}</h3>
+        <p>{{ service2Description }}</p>
+      </div>
+
+     <!-- START THE service3Title &  service3Description -->
+
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+        </div>
+        <h3 class="fs-2">{{ service3Title }}</h3>
+        <p>{{ service3Description }}</p>
+      </div>
+    </div>
+  </div>
+
+     <!-- START THE section3Title &  section3Description -->
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-lg-6">
+
+        <h1 class="display-5 fw-bold">{{ section3Title }}</h1>
+        <p class="col-md-8 fs-4">{{ section3Description }}</p>
+        <button class="btn btn-primary btn-lg" type="button">Example button</button>
+    </div>
+    <div class="col-lg-6">
+
+    <img src="{% static 'main/img/illustrations/man-with-laptop-light.png' %} " class = "img-fluid"alt="Chalkr AI"/>
+</div>
+</div>
+</div>
+</div>
+
+
+
+     <!-- START THE features1Title &  features1Description -->
+
+<div class = "container">
+   <!-- START THE FEATURETTES -->
+
+   <hr class="featurette-divider">
+
+
+    <div class="row featurette">
+     <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1">{{ features1Title }} </h2>
+       <p class="lead"> {{ features1Description }} </p>
+      </div>
+     <div class="col-md-5 order-md-1">
+      <img src="{% static 'main/img/illustrations/man-with-laptop-light.png' %} " class = "img-fluid"alt="Chalkr AI"/>
+     </div>
+   </div>
+
+
+
+   <hr class="featurette-divider">
+
+     <!-- START THE features2Title &  features2Description -->
+  
+   <div class="row featurette">
+     <div class="col-md-7">
+       <h2 class="featurette-heading fw-normal lh-1">{{ features2Title }} </h2>
+       <p class="lead"> {{ features2Description }} </p>
+     </div>
+     <div class="col-md-5">
+      <img src="{% static 'main/img/illustrations/motor.jpg' %} " class = "img-fluid"alt="Chalkr AI"/>
+     </div>
+   </div>
+
+   <hr class="featurette-divider">
+
+
+     <!-- START THE features3Title &  features3Description -->
+
+   <div class="row featurette">
+     <div class="col-md-7">
+       <h2 class="featurette-heading fw-normal lh-1">{{ features3Title }} </h2>
+       <p class="lead"> {{ features3Description }} </p>
+       </div>
+     <div class="col-md-5">
+      <img src="{% static 'main/img/illustrations/Marketing Consultant.png' %} " class = "img-fluid"alt="Chalkr AI"/>
+     </div>
+   </div>
+
+   <hr class="featurette-divider">
+
+</div>
+    
+{% endblock  %}

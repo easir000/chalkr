@@ -37,6 +37,311 @@ def returnMonth(month):
   else:
     return 'December'
 
+
+
+def returnSection1Title(businessDo):
+    
+    
+    response = openai.Completion.create(
+    model="text-davinci-003",
+    prompt="Generate A website landing gpage title (only 5 words in the title) for the following business:\nWhat the business does:{} ".format(businessDo),
+    temperature=0.7,
+    max_tokens=256,
+    top_p=1,
+    frequency_penalty=0,
+    presence_penalty=0
+  )
+
+    if 'choices' in response:
+      if len(response['choices'])>0:
+        answer = response['choices'] [0]['text'].replace('\n', '')
+        return answer
+             
+      else:
+         return ''
+    else:
+        return ''
+
+def returnSection1Description(businessName,businessDo):
+
+  response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Generate a website landing page paragraph description of 160 words for the following business:\nBusiness Name: {}\nWhat the business does:{}\n ".format(businessName,businessDo),
+  temperature=0.7,
+  max_tokens=256,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+
+
+  if 'choices' in response:
+      if len(response['choices'])>0:
+          answer = response['choices'] [0]['text'].replace('\n', '')
+          return answer
+
+         
+      else:
+         return ''
+  else:
+      return ''
+  
+
+
+def return3Services(businessDo):
+
+  response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Generate A website landing gpage title of (only 5 words in the title) for the following business: What the business does:{}\n ".format(businessDo),
+  temperature=0.7,
+  max_tokens=256,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+
+
+  if 'choices' in response:
+      if len(response['choices'])>0:
+          answer = response['choices'] [0]['text'].replace('\n', '').replace('1', '').replace('2', '').replace('3', '')
+          answer_list = answer.split(' . ')
+          # answer_list.remove('')
+          return answer_list
+
+         
+      else:
+         return ''
+  else:
+      return ''
+  
+
+def returnServiceDescription(title):
+
+  response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Generate a website landing page paragraph description of 160 words for the following business:\nBusiness Name: {}\n".format(title),
+  temperature=0.7,
+  max_tokens=256,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+
+
+  if 'choices' in response:
+      if len(response['choices'])>0:
+          answer = response['choices'] [0]['text'].replace('\n', '')
+          return answer
+
+         
+      else:
+         return ''
+  else:
+      return ''
+  
+
+
+def return3Features(businessDo):
+
+  response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Generate A website landing gpage title of (only 5 words in the title) for the following business:\nWhat the business does:{} ".format(businessDo),
+  temperature=0.7,
+  max_tokens=256,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+
+
+  if 'choices' in response:
+      if len(response['choices'])>0:
+          answer = response['choices'] [0]['text'].replace('\n', '').replace('1', '').replace('2', '').replace('3', '')
+          answer_list = answer.split(' . ')
+          # answer_list.remove('')
+          return answer_list
+
+         
+      else:
+         return ''
+  else:
+      return ''
+  
+
+
+
+def returnFeatureDescription(title):
+
+  response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Generate a website landing page paragraph description of 160 words for the following business:\nFeature Title: {}\n ".format(title),
+  temperature=0.7,
+  max_tokens=256,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0
+)
+
+
+  if 'choices' in response:
+      if len(response['choices'])>0:
+          answer = response['choices'] [0]['text'].replace('\n', '')
+          return answer
+
+         
+      else:
+         return ''
+  else:
+      return ''
+  
+
+
+
+
+
+def generateWebTopicIdeas(web):
+  web_topics = []
+  
+  # response = openai.Completion.create(
+  # model="code-davinci-002",
+  # prompt="##### Translate this function  from Python into Haskell\n### Python\n    \n    def predict_proba(X: Iterable[str]):\n        return np.array([predict_one_probas(tweet) for tweet in X])\n    \n### Haskell".format(web),
+  # # prompt="Generate 7 web Topic Ideas on the given topic: {}\n for the related web:  {} \n*".format(topic,web),
+ 
+ 
+  # temperature=0,
+  # max_tokens=54,
+  # top_p=1.0,
+  # frequency_penalty=0.0,
+  # presence_penalty=0.0,
+  # stop=["###"])
+  # stop=["###"])
+  response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="convert python django language into c#, java,c++,R language\n\nC#:\n".format(web),
+  
+  temperature=0.7,
+  max_tokens=260,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0)
+  
+    
+  if 'choices' in response:
+      if len(response['choices'])>0:
+         res = response['choices'] [0]['text']
+         
+      else:
+         return []
+  else:
+      return []
+  a_list = res.split('\n')
+  if len (a_list)>0:
+    for blog in a_list:
+        web_topics.append(blog)
+  else:
+    return []
+  return web_topics
+
+
+
+
+def generateWebSectionTitles(topic,web):
+        web_sections = []
+        response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="##### Translate this function  from Python into Haskell\n### Python\n    \n    def predict_proba(X: Iterable[str]):\n        return np.array([predict_one_probas(tweet) for tweet in X])\n    \n### Haskell".format(topic,web),
+        temperature=0.7,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0)
+#         response = openai.Completion.create(
+#         model="code-davinci-002",
+#         # prompt="##### Translate this function  from Python into Haskell\n### Python\n    \n    def predict_proba(X: Iterable[str]):\n        return np.array([predict_one_probas(tweet) for tweet in X])\n    \n### Haskell".format(topic,web),
+#         prompt="Generate 10 Blog Topic Ideas on the given topic: {}\n for the related web:  {} \n*".format(topic,web),
+        
+#         temperature=0,
+#         max_tokens=54,
+#         top_p=1.0,
+#         frequency_penalty=0.0,
+#         presence_penalty=0.0,
+#         stop=["###"]
+# )
+    
+        if 'choices' in response:
+            if len(response['choices'])>0:
+              res = response['choices'] [0]['text']
+            else:
+              return []
+        else:
+            return []
+        a_list = res.split('*') 
+        if len (a_list)>0:
+          for web in a_list:
+              web_sections.append(web)
+        else:
+          return []
+        return web_sections
+
+
+
+
+
+def generateWebSectionDetails(webTopic,sectionTopic,web,prevWeb,profile):
+        
+      # response = openai.Completion.create(
+      # model="code-davinci-002",
+      # # prompt="##### Translate this function  from Python into Haskell\n### Python\n    \n    def predict_proba(X: Iterable[str]):\n        return np.array([predict_one_probas(tweet) for tweet in X])\n    \n### Haskell".format(webTopic,sectionTopic,web,prevWeb,profile),
+      #   prompt="Generate detailed blog section write up for the following blog section heading,using the web title,web  provided\n\nWeb Title: {}\n\nWeb Section Heading : {}\nWeb : {}\prevBlog :{}\n\n\n".format(webTopic,sectionTopic,web,prevWeb,profile),
+     
+      
+      # temperature=0,
+      # max_tokens=54,
+      # top_p=1.0,
+      # frequency_penalty=0.0,
+      # presence_penalty=0.0,
+      # stop=["###"])
+      response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="##### Translate this function  from Python into Haskell\n### Python\n    \n    def predict_proba(X: Iterable[str]):\n        return np.array([predict_one_probas(tweet) for tweet in X])\n    \n### Haskell".format(webTopic,sectionTopic,web,prevWeb,profile),
+        temperature=0.7,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0)
+    
+      if 'choices' in response:
+        if len(response['choices'])>0:
+          res = response['choices'] [0]['text']
+          if not res == '':
+            cleanedRes =res.replace('\n','<br>')
+            if profile.monthlyCount:
+              oldCount = int(profile.monthlyCount)
+            else:
+              oldCount = 0
+              oldCount += len(cleanedRes.split(' '))
+              profile.monthlyCount = str(oldCount)
+              profile.save()
+            return cleanedRes
+          else:
+            return ''  
+          
+        else:
+            return ''
+      else:
+          return ''
+
+
+
+
+
+
+
+
+
+
+#######################################################
+
 def generateBlogTopicIdeas(topic,audience,keywords):
   blog_topics = []
   response = openai.Completion.create(
@@ -262,7 +567,7 @@ def getNextSubscriptionDate(profile):
 #   print(blog)
   
   
-  
+
 
 
 
