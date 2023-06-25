@@ -38,8 +38,10 @@ SECRET_KEY = 'django-insecure-%rlj+=^p&p+w62&*mr)3@=!w%3g-6pxyt7oz!=zs37mr3v^&qp
 DEBUG = True
 # DEBUG = False
 
-# ALLOWED_HOSTS = ['chalkr', '.vercel.app']
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 PAYPAL_SECRET='EMnAWe06ioGtouJs7gLYT9chK9-2jJ--7MKRXpI8FesmY_2Kp-d_7aCqff7M9moEJBvuXoBO4clKtY0v'
