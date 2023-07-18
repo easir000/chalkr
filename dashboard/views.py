@@ -345,10 +345,10 @@ def generate_image_from_text(request):
         img_file = ContentFile(response.content)
         count = Image.objects.count() +1
         fname = f"image-{count}.jpg"
-        obj = Image(phrase = web)
-        obj.ai_image.save (fname, img_file)
-        obj.save()
-        print(obj)
+        object = Image(phrase = web)
+        object.ai_image.save (fname, img_file)
+        object.save()
+        print(object)
         
         
     return render(request, 'dashboard/images.html', context) 

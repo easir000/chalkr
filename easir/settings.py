@@ -237,6 +237,8 @@ DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
 
 
 JAZZMIN_SETTINGS = {
+
+    
     # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "ChalkrAI",
 
@@ -253,6 +255,12 @@ JAZZMIN_SETTINGS = {
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
+     # List of model admins to search from the search bar, search bar omitted if excluded
+    # If you want to use a single search field you dont need to use a list, you can use a simple string 
+    "search_model": ["auth.User", "auth.Group","dashboard.profile"],
+
+    
+    
       # Welcome text on the login screen
     "welcome_sign": "Welcome to the ChalkrAI",
        # Copyright on the footer
@@ -271,7 +279,18 @@ JAZZMIN_SETTINGS = {
         
     ],
     
-    
+ "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "dashboard.Blogsection": "	fas fa-user-tie",
+        "dashboard.Blog": "	fas fa-user-tie",
+        "dashboard.Membership": "	fas fa-user-tie",
+        "dashboard.profile": "	fas fa-user-tie",
+
+
+        
+    },   
      
 }
 
