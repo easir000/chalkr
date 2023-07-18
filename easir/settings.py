@@ -38,14 +38,12 @@ SECRET_KEY = 'django-insecure-%rlj+=^p&p+w62&*mr)3@=!w%3g-6pxyt7oz!=zs37mr3v^&qp
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','rapidsrv.duckdns.org']
+# ALLOWED_HOSTS = ['172.16.33.98','rapidsrv.duckdns.org']
 
-ALLOWED_HOSTS = ['*'] 
-# ALLOWED_HOSTS = [
-#     'localhost',
-#     '.vercel.app'
-# ]
 
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.16.33.98']  # <-- Updated!
+
+# CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']  # <-- Updated!
 
 PAYPAL_SECRET='EMnAWe06ioGtouJs7gLYT9chK9-2jJ--7MKRXpI8FesmY_2Kp-d_7aCqff7M9moEJBvuXoBO4clKtY0v'
 # Application definition
@@ -65,6 +63,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    "allauth",
+    "allauth.account",
     'landing',
     'authorisation',
     'dashboard',
@@ -251,10 +251,11 @@ JAZZMIN_SETTINGS = {
      "login_logo": True,
 
     # Logo to use for login form in dark themes (defaults to login_logo)
-    "login_logo_dark": None,
+    "login_logo_dark": True,
 
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
+    
      # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
     "search_model": ["auth.User", "auth.Group","dashboard.profile"],
@@ -265,6 +266,8 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Welcome to the ChalkrAI",
        # Copyright on the footer
     "copyright": "CHALkr AI",
+    "version": "CHALkr AI",
+
     "topmenu_links": [
 
         # Url that gets reversed (Permissions can be added)
@@ -283,9 +286,9 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
-        "dashboard.Blogsection": "	fas fa-user-tie",
-        "dashboard.Blog": "	fas fa-user-tie",
-        "dashboard.Membership": "	fas fa-user-tie",
+        "dashboard.Blogsection": "	fas fa-light fa-list",
+        "dashboard.Blog": "fas fa-pen-nib",
+        "dashboard.Membership": "fas fa-light-fa-gear",
         "dashboard.profile": "	fas fa-user-tie",
 
 

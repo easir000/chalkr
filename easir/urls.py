@@ -23,9 +23,11 @@ urlpatterns = [
     path('',include('landing.urls')),
     path('auth/',include('authorisation.urls')),
     path('dashboard/',include('dashboard.urls')),
-    # path('website/',include('website.urls')),
+    path('accounts/', include('allauth.urls')),  # new
         
 ]
 
 if settings.DEBUG:
-	  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+   
