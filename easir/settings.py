@@ -38,22 +38,26 @@ SECRET_KEY = 'django-insecure-%rlj+=^p&p+w62&*mr)3@=!w%3g-6pxyt7oz!=zs37mr3v^&qp
 DEBUG = True
 # DEBUG = False
 
-# ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','rapidsrv.duckdns.org']
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = [
-    'localhost',
-    '.vercel.app'
-]
+ALLOWED_HOSTS = ['*'] 
+# ALLOWED_HOSTS = [
+#     'localhost',
+#     '.vercel.app'
+# ]
 
 
 PAYPAL_SECRET='EMnAWe06ioGtouJs7gLYT9chK9-2jJ--7MKRXpI8FesmY_2Kp-d_7aCqff7M9moEJBvuXoBO4clKtY0v'
 # Application definition
-
+ 
 
 # Application definition
 
 INSTALLED_APPS = [
+   'jazzmin',
+
+    
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,7 +128,7 @@ DATABASES = {
 'ENGINE': 'django.db.backends.mysql',
 'NAME': 'hexflow',
 'USER': 'root',
-'PASSWORD': '',
+'PASSWORD': 'ab12cd34',
 'HOST': '',
 'PORT': '',
 'OPTIONS': {
@@ -168,9 +172,8 @@ USE_TZ = True
 # LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 
+OPENAI_API_KEYS = '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'
 
-
-OPENAI_API_KEYS = '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'
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
 # CONTENT_API_KEYS = 'beed94d14e0e32676281afe883'
@@ -231,3 +234,49 @@ EMAIL_HOST_USER = 'chalkrai@hexflow.com.au'
 EMAIL_HOST_PASSWORD = 'LgYZ?xU396U['
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'TestSite Team <noreply@example.com>'
+
+
+JAZZMIN_SETTINGS = {
+    # title of the window (Will default to current_admin_site.site_title if absent or None)
+    "site_title": "ChalkrAI",
+
+    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_header": "ChalkrAI",
+     "site_brand": "ChalkrAI",
+
+    # Logo to use for your site, must be present in static files, used for brand on top left
+    "site_logo": "landing/img/chalkr.ai.jpg",
+     "login_logo": True,
+
+    # Logo to use for login form in dark themes (defaults to login_logo)
+    "login_logo_dark": None,
+
+    # CSS classes that are applied to the logo above
+    "site_logo_classes": "img-circle",
+      # Welcome text on the login screen
+    "welcome_sign": "Welcome to the ChalkrAI",
+       # Copyright on the footer
+    "copyright": "CHALkr AI",
+    "topmenu_links": [
+
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+
+        # external url that opens in a new window (Permissions can be added)
+        {"name": "Pricing ", "url": "http://127.0.0.1:8000/about", "new_window": True},
+
+        # model admin to link to (Permissions checked against model)
+        {"model": "auth.User"},
+
+        
+    ],
+    
+    
+     
+}
+
+JAZZMIN_UI_TWEAKS = {
+   
+    "theme": "flatly",
+    
+}

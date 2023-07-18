@@ -42,6 +42,19 @@
      {% comment %} <link rel="icon" type="image/x-icon" href="{% static 'main/img/favicon/favicon.ico' %}" />  {% endcomment %}
 
     <!-- Fonts -->
+    
+
+  
+    
+
+ <!-- <link rel="stylesheet" href="{% static 'landing/css/maicons.css' %}"> -->
+
+ <!-- <link rel="stylesheet" href="{% static 'landing/css/bootstrap.css' %}"> -->
+
+ <!-- <link rel="stylesheet" href="{% static  'landing/vendor/animate/animate.css' %}"> -->
+
+ {% comment %} <link rel="stylesheet" href="{% static 'landing/css/theme.css' %}"> {% endcomment %}
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -63,6 +76,8 @@
     <!-- Page CSS -->
 
     <!-- Helpers -->
+
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="{% static 'main/vendor/js/helpers.js' %}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -105,25 +120,695 @@
               </a>
             </li>
 
+
+            
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Answers</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'qa' %}" class="menu-link">
+                  <div data-i18n="Analytics">Q&A</div>
+                  </a>
+                </li> 
+                <li class="menu-item">
+                  <a href="{% url 'fa' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Factual answering</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'jhc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript helper chatbot</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mlai' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">ML/AI language model tutor</div>
+                  </a>
+                </li>
+                
+
+                
+                
+
+
+              </ul>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Classification</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'classification' %}" class="menu-link">
+                  
+                    <div data-i18n="Analytics">Classification</div>
+                  </a>
+                </li>  
+                <li class="menu-item">
+                  <a href="{% url 'advancedtweetclassifier' %}" class="menu-link">
+                  
+                    <div data-i18n="Analytics">Advanced tweet classifier</div>
+                  </a>
+                </li>  
+                <li class="menu-item">
+                  <a href="{% url 'keywords' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Keywords</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'fa' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Factual answering</div>
+                  </a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="{% url 'tweet' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Tweet classifier</div>
+                  </a>
+                </li>
+              </ul>
+            </li> 
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Conversation</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'qa' %}" class="menu-link">
+                  
+                    <div data-i18n="Analytics">Q&A</div>
+                  </a>
+                </li>  
+                <li class="menu-item">
+                  <a href="{% url 'fa' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Factual answering</div>
+                  </a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'jhc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript helper chatbot</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mlai' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">ML/AI language model tutor</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'fc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Friend chat</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'chat' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Chat</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mscb' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Marv the sarcastic chat bot</div>
+                  </a>
+                </li>
+
+
+              </ul>
+            </li>         
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Code</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'NL to ChalkrAI API' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Natural language to OpenAI API</div>
+                  </a>
+                </li> 
+                <li class="menu-item">
+                  <a href="{% url 'NL to Stripe API' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Notifications">Natural language to Stripe API</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'query' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">SQL translate</div>
+                  </a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'Python to natural language' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Python to natural language</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'Calculate Time Complexity' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Calculate Time Complexity</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'tpl' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Translate programming languages</div>
+                  </a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'ec' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Explain code</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'pbf' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Python bug fixer</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'jhc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript helper chatbot</div>
+                  </a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="{% url 'jtp' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript to Python</div>
+                  </a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'wpd' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Write a Python docstring</div>
+                  </a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'jolf' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript one line function</div>
+                  </a>
+                </li>
+                
+              </ul>
+            </li>
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Generation</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'qa' %}" class="menu-link">
+                  
+                    <div data-i18n="Analytics">Q&A</div>
+                  </a>
+                </li> 
+
+                <li class="menu-item">
+                  <a href="{% url 'gc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Grammar correction</div>
+                  </a>
+                </li> 
+                <li class="menu-item">
+                  <a href="{% url 'sf2g' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Summarize for a 2nd grader</div>
+                  </a>
+                </li> 
+                
+                <li class="menu-item">
+                  <a href="{% url 'ttc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics"> Text to command</div>
+                  </a>
+                </li> 
+
+                <li class="menu-item">
+                  <a href="{% url 'etol' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">English to other languages</div>
+                  </a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'pud' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Parse unstructured data</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mte' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Movie to Emoji</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'fa' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Factual answering</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'afpd' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Ad from product description</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'png' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Product name generator</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'tldr' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">TL;DR summarization</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'pbf' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Python bug fixer</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'sc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Spreadsheet creator</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mlai' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">ML/AI language model tutor</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'sfblm' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Science fiction book list maker</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ace' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Airport code extractor</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'sr' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">SQL request</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'eci' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Extract contact information</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'fc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Friend chat</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mtc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Mood to color</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'wpd' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Write a Python docstring</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'am' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Analogy maker</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mhsc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Micro horror story creator</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'tpc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Third-person converter</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ntc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Notes to summary</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'vfig' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">VR fitness idea generator</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'eo' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Essay outline</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'rc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Recipe creator (eat at your own risk)</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'rc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Recipe creator (eat at your own risk)</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'chat' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Chat</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mscb' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Marv the sarcastic chat bot</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ttd' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Turn by turn directions
+                    </div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'rrc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Restaurant review creator
+                    </div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'csn' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Create study notes
+                    </div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'iq' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Interview questions
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Translation</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'NL to ChalkrAI API' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Python to natural language</div>
+                  </a>
+                </li> 
+                
+                <li class="menu-item">
+                  <a href="{% url 'tpl' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Translate programming languages</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ec' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Explain code</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'sr' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">SQL request</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'jtp' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript to Python</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'jolf' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript one line function</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mhsc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Micro horror story creator</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'tpc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Third-person converter</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-code-block"></i>
+                <div data-i18n="Account Settings">Transformation</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'gc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Grammar correction</div>
+                  </a>
+                </li>  
+                
+                <li class="menu-item">
+                  <a href="{% url 'sf2g' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Summarize for a 2nd grader</div>
+                  </a>
+                </li>  
+                <li class="menu-item">
+                  <a href="{% url 'NL to ChalkrAI API' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Natural language to OpenAI API</div>
+                  </a>
+                </li> 
+                <li class="menu-item">
+                  <a href="{% url 'ttc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics"> Text to command</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'etol' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">English to other languages</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'NL to Stripe API' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Notifications">Natural language to Stripe API</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'query' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">SQL translate</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'pud' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Parse unstructured data</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mte' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">Movie to Emoji</div>
+                  </a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="{% url 'Calculate Time Complexity' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Calculate Time Complexity</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'keywords' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Keywords</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'tldr' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
+                    <div data-i18n="Analytics">TL;DR summarization</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ace' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Airport code extractor</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'sr' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">SQL request</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'eci' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Extract contact information</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'jtp' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript to Python</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mtc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Mood to color</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'jolf' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">JavaScript one line function</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'mhsc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Micro horror story creator</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'tpc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Third-person converter</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ntc' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Notes to summary</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'ttd' %}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-stats"></i>
+                    <div data-i18n="Analytics">Turn by turn directions
+                    </div>
+                  </a>
+                </li>
+
+
+              </ul>
+            </li>
+
+
+
+
+
+            
+
+
+
            
+            
+
+           
+            
+            
+
+         
+
+
+
+
+
+
+
 
 
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Blog Assistant</span>
             </li>
-            <li class="menu-item">
-              <a href="{% url 'query' %}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-stats"></i>
-                <div data-i18n="Analytics">SQL translate</div>
-              </a>
-            </li> 
-            <li class="menu-item">
-              <a href="{% url 'translate' %}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-horizontal-center"></i>
-                <div data-i18n="Analytics">English to other languages</div>
-              </a>
-            </li> 
+             
+             
             <li class="menu-item">
               <a href="{% url 'images' %}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-image"></i>
@@ -236,12 +921,6 @@
                     
                     <li>
                       <a class="dropdown-item" href="{% url 'billing' %}">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Billing</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
                         <span class="d-flex align-items-center align-middle">
                           <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
                           <span class="flex-grow-1 align-middle">Billing</span>
@@ -276,7 +955,7 @@
               
             {% endblock  %}
 
-           
+        
               
 
             <!-- Footer -->

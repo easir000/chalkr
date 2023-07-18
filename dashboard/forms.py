@@ -4,6 +4,18 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column,Field
 
 
+
+
+
+class ContactForm(forms.Form):
+    from_email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
+    
+    
+    
+    
+
 class ProfileForm(forms.ModelForm):
     
         first_name = forms.CharField(
@@ -111,4 +123,6 @@ class ProfileImageForm(forms.ModelForm):
             model = Profile
             fields = ['profileImage']
             
+            
+
             

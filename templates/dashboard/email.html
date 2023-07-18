@@ -1,0 +1,27 @@
+{% extends 'layout/dashboard.html' %}
+
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+
+{% block body %}
+
+
+  <h2 class="card-header">Contact US </h2>
+
+        
+        <div class="card-body">
+        
+          <form  method="post" >
+              
+            {%csrf_token%}
+            {{ form|crispy }}
+          <button type = "submit" class = "btn btn-primary me-2">
+                <span class = "d-none d-sm-block">Save Changes</span>
+                  </button>
+            
+           
+          </form>
+        </div>
+     
+
+          {% endblock %}
